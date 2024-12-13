@@ -1,14 +1,15 @@
 name: My Github Actions Workflow
-on: [Push]
+
+on:
+  push:  # This triggers the workflow on any push to the repository.
+    branches:
+      - main  # Optional: Only trigger on pushes to the 'main' branch.
 
 jobs:
-   testing_github:
-     runs-on: ubuntu-latest
-     steps:
-       - name: Hello
-         run: echo "Hello, Github Action"
-       - name: Display Repository name
-         run: echo "This Workflow is running in ${{ github.repository }}"
-
-
-
+  testing_github:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello
+        run: echo "Hello, GitHub Action"
+      - name: Display Repository Name
+        run: echo "This workflow is running in ${{ github.repository }}"
